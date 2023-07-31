@@ -1,0 +1,9 @@
+<%
+    if ((session.getAttribute("userName") == null) || (session.getAttribute("userName") == "")) {
+%>
+Welcome <%=session.getAttribute("userid")%>
+<a href='logout.jsp'>Log out</a>
+
+<%
+    }
+%>

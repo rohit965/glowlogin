@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Registration Form</title>
   <style>
-    /* CSS styles for the login page */
+    /* CSS styles for the form */
     body {
-      background-color: #f2f2f2;
+      background-color: #f8f8f8;
       font-family: Arial, sans-serif;
     }
     .container {
       max-width: 400px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,52 +19,60 @@
     h1 {
       text-align: center;
       color: #333;
-      margin-bottom: 20px;
     }
     .form-group {
       margin-bottom: 20px;
     }
-    .form-group label {
+    label {
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
+      color: #555;
     }
-    .form-group input[type="text"],
-    .form-group input[type="password"] {
+    input[type="text"],
+    input[type="password"] {
       width: 100%;
       padding: 10px;
-      border-radius: 4px;
       border: 1px solid #ccc;
+      border-radius: 5px;
       outline: none;
     }
-    .form-group input[type="submit"] {
+    button {
       width: 100%;
       padding: 10px;
-      border-radius: 4px;
       background-color: #4caf50;
       color: #fff;
-      font-weight: bold;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    .form-group input[type="submit"]:hover {
+    button:hover {
       background-color: #45a049;
     }
-    .register-link {
+    .login-link {
       text-align: center;
       margin-top: 20px;
+      color: #888;
     }
-    .register-link a {
-      color: #777;
+    .login-link a {
+      color: #4caf50;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <form method="post" action="userRegistration.jsp">
   <div class="container">
-    <h1>Login</h1>
-      <form method="post" action="login.jsp">
+    <h1>Registration</h1>
+    <form action="register.jsp" method="post">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
@@ -74,11 +82,13 @@
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
-        <input type="submit" value="Login">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
       </div>
+      <button type="submit">Register</button>
     </form>
-    <div class="register-link">
-      <a href="register.jsp">Don't have an account? Register here</a>
+    <div class="login-link">
+      Already have an account? <a href="index.jsp">Login</a>
     </div>
   </div>
 </body>
